@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>MyPortfolio</title>
+</head>
+<body>
+    <div id="app">
+        <h1 class="blind">프론트엔드 개발자 오래규의 포트폴리오 페이지입니다. 방문해주셔서 감사합니다.</h1>
+        <header class="head">
+            <h2 class="blind">페이지의 header 영역입니다. 페이지 로고, 네비게이션 메뉴를 보여줍니다.</h2>
+            <section class="head-top">
+                <a class="head-logo" href="/">Raekyu,Oh</a>
+                <a class="nav-trigger" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </section>
+            <nav class="head-nav">
+                <ul>
+                    <li><a href="#secAbout">About Me</a></li>
+                    <li><a href="#secStack">Tech Stack</a></li>
+                    <li><a href="#secActivity">Activity</a></li>
+                    <li><a href="#secProject">Project</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <h2 class="blind">페이지의 main 영역입니다. 저에 대한 소개, 기술 스택, 경력, 활동, 프로젝트를 보여줍니다.</h2>
+            <section id="secAbout" class="main-about main-module">
+                <h3 class="tit-about">About Me</h3>
+                <img class="img-profile" src="./images/profile.png" alt="저의 프로필 사진입니다.">
+                <ul class="">
+                    <!-- 이력서 작성 후 변경 -->
+                    <li><a href="#" target="_blank">Resume</a></li>
+                    <li><a href="https://github.com/OhRaeKyu" target="_blank">GitHub</a></li>
+                    <li><a href="https://velog.io/@dhforb123" target="_blank">Tech Blog</a></li>
+                    <li><a href="mailto:dhforb1234@naver.com">dhforb1234@naver.com</a></li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero eaque sequi vel quidem quod consequatur cumque eos dignissimos beatae placeat? Architecto minus asperiores dignissimos molestiae, beatae blanditiis totam optio quia.
+                </p>
+            </section>
+            <section id="secStack" class="main-stack main-module sa sa-up">
+                <h3>Tech Stack</h3>
+                <article>
+                    <table>
+                        <tr>
+                            <td>FE</td>
+                            <td>BE</td>
+                            <td>DepOps</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>SCSS</li>
+                                    <li>JavaScript</li>
+                                    <li>jQuery</li>
+                                    <li>chart.js</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>node.js</li>
+                                    <li>express</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Git</li>
+                                    <li>GitHub</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </article>
+                <h3>Favorite Stack</h3>
+                <article>
+                    <ul>
+                        <li>
+                            <p>HTML/CSS</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, at.</p>
+                        </li>
+                        <li>
+                            <p>JavaScript</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, odit.</p>
+                        </li>
+                        <li>
+                            <p>Git(GitHub)</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, odit.</p>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section id="secActivity" class="main-activity main-module sa sa-up">
+                <h3>Activity</h3>
+                <ul>
+                    <li>
+                        <p><strong>멋쟁이사자처럼</strong>프론트엔드 스쿨 1기 (2021-10-29 ~ 2022-01-27</p>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="secProject" class="main-project main-module sa sa-up">
+                <h3>Project</h3>
+            </section>
+        </main>
+        <footer class="foot">
+            <h2 class="blind">페이지의 footer 영역입니다. 이 페이지의 저작권을 보여줍니다.</h2>
+            
+        </footer>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
+</html>
