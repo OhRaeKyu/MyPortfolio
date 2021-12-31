@@ -9,6 +9,13 @@
 }
 
 @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'GmarketSansBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
     font-weight: normal;
@@ -17,8 +24,8 @@
 
 :root {
     --white: #F2F2F2;
-    --black: #0D0D0D;
     --gray: #A6A6A6;
+    --black: #0D0D0D;
 }
 
 /* Screen Reader Only */
@@ -37,175 +44,52 @@
     transition: all .5s;
 }
 
-.sa-up {
-    transform: translateY(100px);
-}
-
-.sa-down {
-    transform: translateY(-100px);
-}
-
-.sa-right {
-    transform: translateX(-100px);
-}
-
-.sa-left {
-    transform: translateX(100px);
-}
-
 .sa.show {
     opacity: 1;
     transform: none;
 }
 
-/* Mobile */
-/* Header Style */
-#app {
-    font-family: "GmarketSansLight";
+.sa-up {
+    transform: translateY(100px);
 }
 
-.head {
-    position: fixed;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--gray);
-    transition: all 0.25s ease-in-out;
+.sa-left {
+    transform: translateX(500px);
 }
 
-.head.scrollDown { 
-    transform: translateY(-50px);
+.sa-right {
+    transform: translateX(-500px);
 }
 
-.head .head-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
+.sa-rotate {
+    transform: rotateY(90deg);
 }
 
-.head .head-nav {
-    display: none;
-}
-
-.head .head-nav.on {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.head .head-nav.on li + li{
-    margin-top: 10px;
-}
-
-.head .nav-trigger {
-    position: relative;
-    width: 25px;
-    height: 25px;
-}
-
-.head .nav-trigger, .head .nav-trigger span {
-    display: inline-block;
-    transition: all .4s;
-    box-sizing: border-box;
-}
-
-.head .nav-trigger span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--black);
-    border-radius: 4px;
-}
-
-.head .nav-trigger span:nth-of-type(1) {
-    top: 0;
-    animation: nav-bar-01 .75s forwards;
-}
-
-.head .nav-trigger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all .25s;
+.sa-start {
     opacity: 1;
 }
 
-.head .nav-trigger span:nth-of-type(3) {
-    bottom: 0;
-    animation: nav-bar-03 .75s forwards;
+.sa-start.show {
+    transform: translateX(-500px);
 }
 
-@keyframes nav-bar-01 {
-    0% {
-        transform: translateY(11px) rotate(45deg);
-    }
-    50% {
-        transform: translateY(11px) rotate(0);
-    }
-    100% {
-        transform: translateY(0) rotate(0);
-    }
+.sa-bg-black {
+    background-color: var(--black);
 }
 
-@keyframes nav-bar-03 {
-    0% {
-        transform: translateY(-11px) rotate(-45deg);
-    }
-    50% {
-        transform: translateY(-11px) rotate(0);
-    }
-    100% {
-        transform: translateY(0) rotate(0);
-    }
+/* Reset CSS */
+#app {
+    font-family: "GmarketSansLight";
+    color: var(--black);
+    overflow: hidden;
 }
 
-.head .nav-trigger.active span:nth-of-type(1) {
-    animation: active-nav-bar-01 .75s forwards;
-}
-
-.head .nav-trigger.active span:nth-of-type(2) {
-    opacity: 0;
-}
-
-.head .nav-trigger.active span:nth-of-type(3) {
-    animation: active-nav-bar-03 .75s forwards;
-}
-
-@keyframes active-nav-bar-01 {
-    0% {
-        transform: translateY(0) rotate(0);
-    }
-    50% {
-        transform: translateY(11px) rotate(0);
-    }
-    100% {
-        transform: translateY(11px) rotate(45deg);
-    }
-}
-
-@keyframes active-nav-bar-03 {
-    0% {
-        transform: translateY(0) rotate(0);
-    }
-    50% {
-        transform: translateY(-11px) rotate(0);
-    }
-    100% {
-        transform: translateY(-11px) rotate(-45deg);
-    }
-}
-
+/* Mobile */
 /* Main Style */
 .main {
     height: 100%;
     background-color: var(--gray);
-    padding: 70px 20px;
+    padding: 20px;
 }
 
 .main section + section {
@@ -216,23 +100,117 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    height: 90vh;
-    padding: 70px 20px;
     box-sizing: border-box;
+    width: 100%;
+    height: 95vh;
+    padding: 70px 20px;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px var(--black);
     background-color: var(--white);
+    color: var(--black);
+}
+
+.main .main-module h3[class^="tit-"] {
+    margin-bottom: 30px;
+    font-family: "GmarketSansMedium";
+    font-size: 2rem;
+    text-shadow: 3px 0 3px var(--gray);
+}
+
+.main .main-module:nth-child(2n) {
+    color: var(--white);
+    background-color: inherit;
+    border: 5px solid var(--white);
+}
+
+.main .main-module:nth-child(2n) h3[class^="tit-"]{
+    text-shadow: 3px 0 3px var(--black);
+}
+
+/* Section main-start */
+.main .main-start {
+    align-items: flex-end;
+    justify-content: center;
+    font-family: "GmarketSansBold";
+    text-shadow: 8px 0 8px var(--black);
+}
+
+.main-start .name-list {
+    width: 100%;
+    font-size: 5rem;
+}
+
+.main-start .start-course {
+    font-size: 2.5rem;
+    text-align: end;
+    margin-top: 50px;
+}
+
+/* Section main-about */
+.main-about .list-about {
+    border-left: 1px solid var(--black);
+    border-right: 1px solid var(--black);
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 .main-about .img-profile {
     width: 150px;
+    border: 1px solid var(--gray);
     border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-.main .main-stack {
-    background-color: inherit;
-    border: none;
+.main-about .list-about li{
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: var(--gray);
     color: var(--white);
+    font-size: 10px;
+    font-family: "GmarketSansMedium";
+    text-shadow: 1px 0 1px var(--black);
+}
+
+.main-about .list-about li + li{
+    margin-top: 5px;
+}
+
+.main-about .intro-about {
+    padding: 20px 0;
+}
+
+/* Section main-about */
+.main .main-stack {
+    padding: 40px 20px;
+}
+
+.main .main-stack h3[class^="tit-"] {
+    margin-bottom: 10px;
+}
+
+.main-stack .list-stack {
+    width: 100%;
+}
+
+.list-stack .course-stack th{
+    width: 33%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--white);
+    text-shadow: 2px 0 2px var(--black);
+    font-family: "GmarketSansMedium";
+}
+
+.list-stack .item-stack {
+    font-size: 12px;
+    text-align: center;
+}
+
+.list-stack .item-stack li{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
 }
 
 /* Desktop Style */
