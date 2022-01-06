@@ -23,6 +23,11 @@
 }
 
 :root {
+    --white: #FAF8F6;
+    --black: #27272A;
+    --orange: #D9720E;
+    --light-blue: #a9cbd7;
+    --light-pink: #EFB9C0;
 }
 
 /* Screen Reader Only */
@@ -35,48 +40,187 @@
 	overflow: hidden;
 }
 
-/* Scroll Animation */
-.sa {
-    opacity: 0;
+/* outline test */
+* {
+    /* outline: 1px solid red; */
+}
+
+/* Slide Animation */
+.sa-start {
+    transition: all 0.2s ease-out;
+}
+
+/* Mobile Style */
+#app {
+    font-family: 'GmarketSansMedium';
+    background-image: linear-gradient(-45deg, var(--light-blue), var(--light-pink)), linear-gradient(var(--black), var(--black));
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, right;
+
+    /* background: linear-gradient(-45deg, var(--black), var(--black), var(--light-blue), var(--light-pink));
+    background-size: 400% 400%;
+    background-attachment: fixed; */
+    color: var(--black);
+    transition: all .5s linear;
+}
+
+#app.show {
+    background-position: right, left; 
+}
+
+.move-top {
+    position: fixed;
+    bottom: 3%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-balloon {
     transition: all .5s;
 }
 
-.sa.show {
-    opacity: 1;
-    transform: none;
+.bg-balloon.off {
+    opacity: 0;
 }
 
-.sa-up {
-    transform: translateY(100px);
+.balloon {
+    position: fixed;
+    bottom: 0;
+    animation: balloonMove 20s linear infinite;
+    transition: all .5s;
 }
 
-.sa-left {
-    transform: translateX(500px);
+.balloon:nth-child(2){
+    left: 30vw;
+    animation-duration: 10s;
 }
 
-.sa-right {
-    transform: translateX(-500px);
+.balloon:nth-child(3){
+    left: 50vw;
+    animation-duration: 15s;
 }
 
-.sa-rotate {
-    transform: rotateY(90deg);
+.balloon:nth-child(4){
+    right: 20vw;
+    animation-duration: 25s;
 }
 
-.sa-start {
-    opacity: 1;
+@keyframes balloonMove {
+    0% {
+        transform: translate(0, 25vh);
+    } 20% {
+        transform: translate(20vw, 0);
+    } 40% {
+        transform: translate(0, -25vh);
+    } 60% {
+        transform: translate(20vw, -50vh);
+    } 80% {
+        transform: translate(0, -75vh);
+    } 100% {
+        transform: translate(20vw, -100vh);
+    }
 }
 
-.sa-start.show {
-    transform: translateX(-500px);
+.sec-start {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'GmarketSansBold';
 }
 
-.sa-bg-black {
+.sec-start .name {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    font-size: 5rem;
+}
+
+.sec-start .course {
+    position: fixed;
+    bottom: 25%;
+    right: 5%;
+    font-size: 3rem;
+    white-space: nowrap;
+}
+
+.sec-main .main-module {
+    position: relative;
+    margin: 0 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.sec-main .main-module:nth-child(2n) {
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+.sec-main .main-module:nth-child(2n + 1) {    
+    color: var(--white);
+}
+
+.sec-main .main-module + .main-module{
+    margin-top: 40px;
+}
+
+.main-module h3[class^="tit-"]{
+    margin: 20px 0;
+    font-size: 2.5rem;
+    font-family: 'GmarketSansBold';
+}
+
+.main-module:nth-child(2n+1) h3[class^="tit-"]{
+    color: var(--orange);
+}
+
+.sec-main .main-about {
+    background-color: var(--white);
+    border-radius: 20px;
+}
+
+.main-about .subtit-about {
+    font-size: 1.5rem;
+}
+
+.main-about .contact-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.main-about .contact-me .img-profile {
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid var(--black);
+}
+
+.main-about .contact-me .list-contact a {
+    display: block;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    font-size: 0.5rem;
+    color: var(--white);
     background-color: var(--black);
+    border-radius: 10px;
 }
 
-/* Reset CSS */
+.main-about .contact-me .list-contact li + li {
+    margin-top: 5px;
+}
 
-/* Mobile Style */
+.sec-main .main-stack {
+}
+
+.sec-main .main-activity {
+}
+
+.sec-main .main-project {
+
+}
 
 /* Desktop Style */
 @media all and (min-width: 420px) {
