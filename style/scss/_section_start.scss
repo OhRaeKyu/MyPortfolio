@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* Start Section Style */
+.sec-start {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'GmarketSansBold';
+
+  .name {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    font-size: 5rem;
+  }
+
+  .course {
+    position: fixed;
+    bottom: 25%;
+    right: 5%;
+    font-size: 3rem;
+    white-space: nowrap;
+  }
+}

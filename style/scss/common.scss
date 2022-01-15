@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+@import "./variables";
+@import "./reset", "./animation", "./section_start", "./main";
+
+#app {
+  font-family: 'GmarketSansMedium';
+  background: linear-gradient(
+    180deg,
+    $LIGHT_PINK,
+    $LIGHT_BLUE,
+    $LIGHT_BLACK,
+    $LIGHT_BLACK
+  );
+  background-size: 100% 400vh;
+  background-attachment: fixed;
+  color: $LIGHT_BLACK;
+  transition: all 0.3s linear;
+
+  &.show {
+    background-position: 100% 100%;
+  }
+}
+
+/* 상단으로 가기 버튼 Style */
+.move-top {
+  position: fixed;
+  bottom: 3%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 풍선 애니메이션 Style */
+.bg-balloon {
+  transition: all 0.5s;
+
+  &.off {
+    opacity: 0;
+  }
+
+  .ballon {
+    position: fixed;
+    bottom: 0;
+    width: 64px;
+    height: 64px;
+    background-image: url(../../images/balloon.png));
+    background-size: 100% 100%;
+    animation: balloonMove 20s linear infinite;
+
+    &:nth-child(2) {
+      left: 12.5vw;
+      animation-duration: 10s;
+    }
+    
+    &:nth-child(3) {
+      left: 25vw;
+      animation-duration: 30s;
+    }
+    
+    &:nth-child(4) {
+      left: 37.5vw;
+      animation-duration: 15s;
+    }
+    
+    &:nth-child(5) {
+      left: 50vw;
+      animation-duration: 35s;
+    }
+    
+    &:nth-child(6) {
+      left: 62.5vw;
+      animation-duration: 8s;
+    }
+  }
+}
+
+@keyframes balloonMove {
+  0% {
+    transform: translate(0, 25vh);
+  }
+  20% {
+    transform: translate(20vw, 0);
+  }
+  40% {
+    transform: translate(0, -25vh);
+  }
+  60% {
+    transform: translate(20vw, -50vh);
+  }
+  80% {
+    transform: translate(0, -75vh);
+  }
+  100% {
+    transform: translate(20vw, -100vh);
+  }
+}

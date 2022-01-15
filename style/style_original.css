@@ -1,0 +1,275 @@
+/* Only Mobile and Desktop */
+@charset "utf-8";
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --white: #faf8f6;
+  --black: #27272a;
+  --light-black: rgba(39, 39, 42, 0.9);
+  --orange: #d9720e;
+  --light-blue: #a9cbd7;
+  --light-pink: #efb9c0;
+}
+
+/* Screen Reader Only */
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+/* outline test */
+* {
+  /* outline: 1px solid red; */
+}
+
+/* Slide Animation */
+.sa-start {
+  transition: all 0.2s ease-out;
+}
+
+.sa {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.sa-load {
+  transform: rotateY(90deg);
+  /* transform: scale(0.5); */
+}
+
+/* Mobile Style */
+#app {
+  font-family: 'GmarketSansMedium';
+  background: linear-gradient(
+    180deg,
+    var(--light-pink),
+    var(--light-blue),
+    var(--light-black),
+    var(--light-black)
+  );
+  background-size: 100% 400vh;
+  background-attachment: fixed;
+  color: var(--light-black);
+  transition: all 0.3s linear;
+}
+
+#app.show {
+  background-position: 100% 100%;
+}
+
+/* 상단으로 가기 버튼 Style */
+.move-top {
+  position: fixed;
+  bottom: 3%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 풍선 애니메이션 Style */
+.bg-balloon {
+  transition: all 0.5s;
+}
+
+.bg-balloon.off {
+  opacity: 0;
+}
+
+.bg-balloon .balloon {
+  position: fixed;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  background-image: url(../images/balloon.png);
+  background-size: 100% 100%;
+  animation: balloonMove 20s linear infinite;
+}
+
+.balloon:nth-child(2) {
+  left: 12.5vw;
+  animation-duration: 10s;
+}
+
+.balloon:nth-child(3) {
+  left: 25vw;
+  animation-duration: 30s;
+}
+
+.balloon:nth-child(4) {
+  left: 37.5vw;
+  animation-duration: 15s;
+}
+
+.balloon:nth-child(5) {
+  left: 50vw;
+  animation-duration: 35s;
+}
+
+.balloon:nth-child(6) {
+  left: 62.5vw;
+  animation-duration: 8s;
+}
+
+@keyframes balloonMove {
+  0% {
+    transform: translate(0, 25vh);
+  }
+  20% {
+    transform: translate(20vw, 0);
+  }
+  40% {
+    transform: translate(0, -25vh);
+  }
+  60% {
+    transform: translate(20vw, -50vh);
+  }
+  80% {
+    transform: translate(0, -75vh);
+  }
+  100% {
+    transform: translate(20vw, -100vh);
+  }
+}
+
+/* Start Section Style */
+.sec-start {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'GmarketSansBold';
+}
+
+.sec-start .name {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  font-size: 5rem;
+}
+
+.sec-start .course {
+  position: fixed;
+  bottom: 25%;
+  right: 5%;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+/* Main Section Style */
+.sec-main .main-module {
+  position: relative;
+  margin: 0 20px;
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+.sec-main .main-module:nth-child(2n) {
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+.sec-main .main-module:nth-child(2n + 1) {
+  color: var(--white);
+}
+
+.sec-main .main-module + .main-module {
+  margin-top: 50px;
+}
+
+.main-module h3[class^='tit-'] {
+  font-size: 2.5rem;
+  font-family: 'GmarketSansBold';
+}
+
+/* 폰트 그라데이션 적용 할지 안할지 정하기 */
+.main-module:nth-child(2n + 1) h3[class^='tit-'] {
+  color: var(--light-pink);
+}
+
+/* Main Sectoin > About Style */
+.sec-main .main-about {
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+.main-about .subtit-about {
+  font-size: 1.5rem;
+  margin: 20px auto;
+}
+
+.main-about .contact-me {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-about .contact-me .img-profile {
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid var(--black);
+}
+
+.main-about .contact-me .list-contact a {
+  display: block;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 0.5rem;
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 10px;
+}
+
+.main-about .contact-me .list-contact li + li {
+  margin-top: 5px;
+}
+
+.main-about .intro-me {
+  margin: 30px auto 0;
+  width: 90%;
+}
+
+/* Main Sectoin > Stack Style */
+.sec-main .main-stack {
+}
+
+.sec-main .main-activity {
+}
+
+.sec-main .main-project {
+}
+
+/* Desktop Style */
+@media all and (min-width: 420px) {
+}

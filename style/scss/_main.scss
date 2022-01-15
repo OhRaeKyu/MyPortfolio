@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/* Main Section Style */
+.sec-main {
+  /* Main Sectoin > Module Style */
+  .main-module {
+    position: relative;
+    margin: 0 20px;
+    padding: 60px 0 40px;
+    text-align: center;
+
+    + .main-module {
+      margin-top: 50px;
+    }
+
+    h3[class^='tit-'] {
+      font-size: 2.5rem;
+      font-family: 'GmarketSansBold';
+    }
+  }
+
+  /* Main Sectoin > About Style */
+  .main-about {
+    background-color: $WHITE;
+    border-radius: 20px;
+
+    .subtit-about {
+      font-size: 1.5rem;
+      margin: 20px auto;
+    }
+
+    .contact-me {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      .img-profile {
+        width: 150px;
+        border-radius: 50%;
+        border: 1px solid $BLACK;
+      }
+
+      .list-contact a {
+        display: block;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        font-size: 0.5rem;
+        color: $WHITE;
+        background-color: $BLACK;
+        border-radius: 10px;
+      }
+
+      .list-contact li + li {
+        margin-top: 5px;
+      }
+    }
+    .intro-me {
+      margin: 30px auto 0;
+      width: 90%;
+    }
+  }
+}
+
+/* Main Sectoin > Stack Style */
+.sec-main .main-stack {
+}
+
+.sec-main .main-activity {
+}
+
+.sec-main .main-project {
+}
+
+/* Desktop Style */
+@media all and (min-width: 420px) {
+}
