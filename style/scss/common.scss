@@ -1,7 +1,7 @@
 @charset "utf-8";
 
-@import "./variables";
-@import "./reset", "./animation", "./section_start", "./main";
+@import './variables';
+@import './reset', './animation', './section_start', './main';
 
 #app {
   font-family: 'GmarketSansMedium';
@@ -46,7 +46,7 @@
     bottom: 0;
     width: 64px;
     height: 64px;
-    background-image: url(../../images/balloon.png));
+    background-image: url(../../images/balloon.png);
     background-size: 100% 100%;
     animation: balloonMove 20s linear infinite;
 
@@ -54,22 +54,22 @@
       left: 12.5vw;
       animation-duration: 10s;
     }
-    
+
     &:nth-child(3) {
       left: 25vw;
       animation-duration: 30s;
     }
-    
+
     &:nth-child(4) {
       left: 37.5vw;
       animation-duration: 15s;
     }
-    
+
     &:nth-child(5) {
       left: 50vw;
       animation-duration: 35s;
     }
-    
+
     &:nth-child(6) {
       left: 62.5vw;
       animation-duration: 8s;
