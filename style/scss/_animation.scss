@@ -19,3 +19,33 @@
   transform: rotateY(90deg);
   /* transform: scale(0.5); */
 }
+
+@keyframes balloonMove {
+  0% {
+    transform: translate(0, 25vh);
+  }
+  20% {
+    transform: translate(20vw, 0);
+  }
+  40% {
+    transform: translate(0, -25vh);
+  }
+  60% {
+    transform: translate(20vw, -50vh);
+  }
+  80% {
+    transform: translate(0, -75vh);
+  }
+  100% {
+    transform: translate(20vw, -100vh);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

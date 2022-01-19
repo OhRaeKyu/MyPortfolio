@@ -5,27 +5,26 @@
   /* Main Sectoin > Module Style */
   .main-module {
     position: relative;
-    margin: 0 20px;
-    padding: 60px 0 40px;
+    margin: 0 5vw;
     text-align: center;
 
-    + .main-module {
-      margin-top: 50px;
-    }
-
-    h3[class^='tit-'] {
-      font-size: 2.5rem;
-      font-family: 'GmarketSansBold';
+    &:nth-child(n + 3) {
+      color: $WHITE;
     }
   }
 
   /* Main Sectoin > About Style */
-  .main-about {
+  .sec-about {
     background-color: $WHITE;
     border-radius: 20px;
+    padding: 10vh 0;
+
+    .tit-about {
+      @include tit-mobile;
+    }
 
     .subtit-about {
-      font-size: 1.5rem;
+      font-size: 6vw;
       margin: 20px auto;
     }
 
@@ -38,16 +37,16 @@
       .img-profile {
         width: 150px;
         border-radius: 50%;
-        border: 1px solid $BLACK;
+        border: 1px solid $LIGHT_BLACK;
       }
 
       .list-contact a {
         display: block;
         box-sizing: border-box;
-        padding: 5px 10px;
+        padding: 5px 2vw;
         font-size: 0.5rem;
         color: $WHITE;
-        background-color: $BLACK;
+        background-color: rgba($LIGHT_BLACK, 0.8);
         border-radius: 10px;
       }
 
@@ -55,23 +54,354 @@
         margin-top: 5px;
       }
     }
+
     .intro-me {
       margin: 30px auto 0;
-      width: 90%;
+      width: 80vw;
+      line-height: 1.5;
+      font-size: 4vw;
+      p + p {
+        margin-top: 2vh;
+      }
+      span {
+        @include txt-gradient;
+      }
+    }
+  }
+
+  .sec-stack {
+    .tit-stack {
+      @include tit-mobile;
+    }
+
+    .container-stack {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2vw;
+      font-size: 3vw;
+      margin: 5vw 0 10vw;
+
+      li {
+        padding: 1.5vw 0;
+        border: 1px solid $LIGHT_BLACK;
+        border-radius: 10px;
+        font-family: 'GmarketSansBold';
+      }
+
+      .stack-plan {
+        animation: blink 0.5s alternate infinite;
+      }
+    }
+
+    // .wrap-mainStack {
+    //   position: relative;
+    //   text-align: start;
+    //   border: 1px solid $LIGHT_BLACK;
+    //   border-radius: 10px;
+    //   padding: 4vw 0 4vw 30px;
+    //   margin-top: 7vw;
+
+    //   .tit-item {
+    //     box-sizing: border-box;
+    //     position: absolute;
+    //     top: -4vw;
+    //     left: -4vw;
+    //     padding: 2vw;
+    //     border-radius: 20px;
+    //     background-color: $LIGHT_BLACK;
+    //     font-size: 3vw;
+    //     color: $WHITE;
+    //   }
+
+    //   .cont-item {
+    //     li {
+    //       position: relative;
+    //       font-size: 3vw;
+
+    //       &::before {
+    //         display: block;
+    //         position: absolute;
+    //         top: 50%;
+    //         left: -15px;
+    //         transform: translateY(-50%);
+    //         content: '';
+    //         width: 7px;
+    //         height: 2px;
+    //         background-color: $LIGHT_BLACK;
+    //       }
+    //     }
+    //   }
+    // }
+  }
+
+  .sec-project {
+    .tit-project {
+      @include tit-mobile;
+    }
+
+    .wrap-project {
+      margin-top: 7vw;
+
+      .item-project {
+        position: relative;
+        text-align: start;
+        border-radius: 10px;
+        padding: 4vw 0 4vw 30px;
+
+        &:nth-child(2n) {
+          border: 1px solid $LIGHT_PINK;
+          .tit-item {
+            background-color: $LIGHT_PINK;
+          }
+          .period-item {
+            border-bottom: 1px solid $LIGHT_PINK;
+          }
+          svg {
+            fill: $LIGHT_PINK;
+          }
+        }
+
+        &:nth-child(2n + 1) {
+          border: 1px solid $LIGHT_BLUE;
+          .tit-item {
+            background-color: $LIGHT_BLUE;
+          }
+          .period-item {
+            border-bottom: 1px solid $LIGHT_BLUE;
+          }
+          svg {
+            fill: $LIGHT_BLUE;
+          }
+        }
+
+        .tit-item {
+          box-sizing: border-box;
+          position: absolute;
+          top: -4vw;
+          left: -4vw;
+          padding: 2vw;
+          border-radius: 20px;
+          font-size: 3vw;
+          color: $LIGHT_BLACK;
+        }
+
+        .period-item {
+          box-sizing: border-box;
+          position: absolute;
+          top: 10%;
+          right: 3%;
+          padding-bottom: 1vw;
+          font-size: 10px;
+        }
+
+        .skill-use {
+          display: flex;
+          width: 50%;
+
+          li {
+            font-size: 10px;
+          }
+
+          li + li {
+            margin-left: 10px;
+          }
+        }
+
+        svg[class^='link-'] {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+        }
+
+        .link-web {
+          bottom: -15px;
+          right: 60px;
+        }
+
+        .link-git {
+          bottom: -15px;
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  .sec-activity {
+    .tit-activity {
+      @include tit-mobile;
     }
   }
 }
 
 /* Main Sectoin > Stack Style */
-.sec-main .main-stack {
-}
-
-.sec-main .main-activity {
-}
 
 .sec-main .main-project {
 }
 
 /* Desktop Style */
 @media all and (min-width: 420px) {
+  .sec-main {
+    .main-module + .main-module {
+      margin-top: 50px;
+    }
+    .sec-about {
+      padding: 50px 0;
+
+      .tit-about {
+        @include tit-desktop;
+      }
+
+      .subtit-about {
+        display: inline-block;
+        background-image: linear-gradient(
+          to top,
+          $LIGHT_BLUE 50%,
+          transparent 50%
+        );
+        font-size: 2rem;
+      }
+
+      .contact-me {
+        justify-content: center;
+
+        .wrap-profile {
+          position: relative;
+        }
+
+        .img-profile {
+          width: 15vw;
+          min-width: 150px;
+          margin-right: 5vw;
+        }
+
+        .list-contact a {
+          font-size: 1rem;
+          border-radius: 20px;
+
+          &:hover {
+            background-color: $BLACK;
+          }
+        }
+
+        .list-contact li + li {
+          margin-top: 10px;
+        }
+      }
+
+      .intro-me {
+        font-size: 1.25rem;
+      }
+    }
+
+    .sec-stack {
+      &.dark {
+        color: $WHITE;
+
+        .container-stack {
+          li {
+            border-color: $WHITE;
+          }
+        }
+      }
+      .tit-stack {
+        @include tit-desktop;
+      }
+
+      .container-stack {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 1rem;
+        margin: 50px 0;
+
+        li {
+          width: 150px;
+          padding: 10px 0;
+          border-radius: 20px;
+        }
+
+        .stack-plan {
+          animation: blink 0.5s alternate infinite;
+        }
+      }
+
+      // .wrap-mainStack {
+      //   display: inline-block;
+      //   width: 300px;
+      //   padding: 30px;
+      //   margin-top: 50px;
+
+      //   .tit-item {
+      //     top: -20px;
+      //     left: -20px;
+      //     padding: 10px 20px;
+      //     font-size: 1rem;
+      //   }
+
+      //   .cont-item {
+      //     li {
+      //       font-size: 1rem;
+      //     }
+      //   }
+      // }
+
+      // .wrap-mainStack + .wrap-mainStack {
+      //   margin-left: 5vw;
+      // }
+    }
+
+    .sec-project {
+      .tit-project {
+        @include tit-desktop;
+      }
+
+      .wrap-project {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 50px;
+
+        .item-project {
+          display: inline-block;
+          width: 40%;
+          min-width: 400px;
+          padding: 30px;
+
+          .tit-item {
+            top: -20px;
+            left: -20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+          }
+
+          .period-item {
+            padding-bottom: 5px;
+            font-size: 0.75rem;
+          }
+
+          .skill-use {
+            display: flex;
+            width: 50%;
+
+            li {
+              font-size: 1rem;
+            }
+          }
+
+          svg[class^='link-'] {
+            width: 50px;
+            height: 50px;
+          }
+
+          .link-web {
+            right: 100px;
+          }
+
+          .link-git {
+            right: 25px;
+          }
+        }
+      }
+    }
+  }
 }
