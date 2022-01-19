@@ -18,15 +18,21 @@
     <title>오래규의 포트폴리오</title>
   </head>
   <body>
+    <div class="skip">
+      <a href="#secAbout">About Me 바로가기</a>
+      <a href="#secStack">Tech Stack 바로가기</a>
+      <a href="#secProject">Project 바로가기</a>
+      <a href="#secActivity">Activity 바로가기</a>
+    </div>
+    <div id="moveTopBtn" class="move-top">
+      <p class="txt-down">아래로 스크롤 해주세요.</p>
+      <p class="txt-up">TOP</p>
+    </div>
     <div id="app">
       <h1 class="blind">
         프론트엔드 개발자 오래규의 포트폴리오 페이지입니다. 방문해주셔서
         감사합니다.
       </h1>
-      <div id="moveTopBtn" class="move-top">
-        <p class="txt-down">아래로 스크롤 해주세요.</p>
-        <p class="txt-up">TOP</p>
-      </div>
       <div class="bg-balloon">
         <div class="balloon"></div>
         <div class="balloon"></div>
@@ -40,14 +46,14 @@
           페이지의 시작 영역입니다. 저의 이름과 진로 명을 영문으로 보여줍니다.
         </h2>
         <div class="name sa-start">
-          <p>OH</p>
-          <p>RAE</p>
-          <p>KYU</p>
+          <p>Oh</p>
+          <p>Rae</p>
+          <p>Kyu</p>
         </div>
         <p class="course sa-start">FRONT-END</p>
       </section>
       <main class="sec-main">
-        <section class="sec-about main-module">
+        <section id="secAbout" class="sec-about main-module">
           <h2 class="tit-about">About Me</h2>
           <p class="subtit-about">더 나은 경험을 주는 개발자</p>
           <div class="contact-me">
@@ -117,9 +123,9 @@
                 <li>React</li>
               </ul>
               <p class="purpose-project">
-                빵(Bread)에 관심 있는 사용자에게
+                빵(Bread)에 관심 있는
                 <br />
-                맞는(Fit) 서비스.
+                사용자에게 맞는(Fit) 서비스.
               </p>
               <p class="cont-project">
                 자신의 스토어에서 판매하고 있는 상품(빵)을 등록하여 홍보할 수
@@ -140,7 +146,9 @@
                   ></path>
                 </svg>
               </a>
-              <a href="#"
+              <a
+                href="https://github.com/ongddree/bread-fit-react"
+                target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -204,7 +212,7 @@
           </p>
         </section>
       </main>
-      <footer class="foot">
+      <footer id="secFoot" class="foot">
         <h2 class="blind">
           페이지의 footer 영역입니다. 이 페이지의 저작권을 보여줍니다.
         </h2>

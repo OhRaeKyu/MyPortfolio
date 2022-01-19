@@ -13,6 +13,10 @@
     }
   }
 
+  .main-module + .main-module {
+    margin-top: 10vw;
+  }
+
   /* Main Sectoin > About Style */
   .sec-about {
     background-color: $WHITE;
@@ -24,6 +28,12 @@
     }
 
     .subtit-about {
+      display: inline-block;
+      background-image: linear-gradient(
+        to top,
+        $LIGHT_BLUE 50%,
+        transparent 50%
+      );
       font-size: 6vw;
       margin: 20px auto;
     }
@@ -70,6 +80,16 @@
   }
 
   .sec-stack {
+    &.dark {
+      color: $WHITE;
+
+      .container-stack {
+        li {
+          border-color: $WHITE;
+        }
+      }
+    }
+
     .tit-stack {
       @include tit-mobile;
     }
@@ -78,13 +98,13 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2vw;
-      font-size: 3vw;
-      margin: 5vw 0 10vw;
+      font-size: 2vw;
+      margin-top: 5vw;
 
       li {
         padding: 1.5vw 0;
         border: 1px solid $LIGHT_BLACK;
-        border-radius: 10px;
+        border-radius: 20px;
         font-family: 'GmarketSansBold';
       }
 
@@ -92,46 +112,6 @@
         animation: blink 0.5s alternate infinite;
       }
     }
-
-    // .wrap-mainStack {
-    //   position: relative;
-    //   text-align: start;
-    //   border: 1px solid $LIGHT_BLACK;
-    //   border-radius: 10px;
-    //   padding: 4vw 0 4vw 30px;
-    //   margin-top: 7vw;
-
-    //   .tit-item {
-    //     box-sizing: border-box;
-    //     position: absolute;
-    //     top: -4vw;
-    //     left: -4vw;
-    //     padding: 2vw;
-    //     border-radius: 20px;
-    //     background-color: $LIGHT_BLACK;
-    //     font-size: 3vw;
-    //     color: $WHITE;
-    //   }
-
-    //   .cont-item {
-    //     li {
-    //       position: relative;
-    //       font-size: 3vw;
-
-    //       &::before {
-    //         display: block;
-    //         position: absolute;
-    //         top: 50%;
-    //         left: -15px;
-    //         transform: translateY(-50%);
-    //         content: '';
-    //         width: 7px;
-    //         height: 2px;
-    //         background-color: $LIGHT_BLACK;
-    //       }
-    //     }
-    //   }
-    // }
   }
 
   .sec-project {
@@ -146,18 +126,24 @@
         position: relative;
         text-align: start;
         border-radius: 10px;
-        padding: 4vw 0 4vw 30px;
+        padding: 5vw;
+        font-size: 3vw;
 
         &:nth-child(2n) {
           border: 1px solid $LIGHT_PINK;
           .tit-item {
             background-color: $LIGHT_PINK;
           }
-          .period-item {
-            border-bottom: 1px solid $LIGHT_PINK;
+          .purpose-project {
+            color: $LIGHT_PINK;
           }
-          svg {
-            fill: $LIGHT_PINK;
+          a {
+            svg {
+              fill: $LIGHT_PINK;
+            }
+            &:hover svg {
+              fill: $LIGHT_BLUE;
+            }
           }
         }
 
@@ -166,11 +152,16 @@
           .tit-item {
             background-color: $LIGHT_BLUE;
           }
-          .period-item {
-            border-bottom: 1px solid $LIGHT_BLUE;
+          .purpose-project {
+            color: $LIGHT_BLUE;
           }
-          svg {
-            fill: $LIGHT_BLUE;
+          a {
+            svg {
+              fill: $LIGHT_BLUE;
+            }
+            &:hover svg {
+              fill: $LIGHT_PINK;
+            }
           }
         }
 
@@ -179,16 +170,17 @@
           position: absolute;
           top: -4vw;
           left: -4vw;
-          padding: 2vw;
+          padding: 0 2vw;
+          line-height: 1.5;
           border-radius: 20px;
-          font-size: 3vw;
           color: $LIGHT_BLACK;
+          font-size: 4vw;
         }
 
         .period-item {
           box-sizing: border-box;
           position: absolute;
-          top: 10%;
+          top: -13px;
           right: 3%;
           padding-bottom: 1vw;
           font-size: 10px;
@@ -200,11 +192,24 @@
 
           li {
             font-size: 10px;
+            border: 1px solid $WHITE;
+            padding: 1.5vw 3vw;
+            border-radius: 20px;
           }
 
           li + li {
             margin-left: 10px;
           }
+        }
+
+        .purpose-project {
+          margin: 3vw 0;
+          font-size: 4vw;
+          line-height: 1.5;
+        }
+
+        .cont-project {
+          line-height: 1.5;
         }
 
         svg[class^='link-'] {
@@ -223,6 +228,10 @@
           right: 20px;
         }
       }
+
+      .item-project + .item-project {
+        margin-top: 10vw;
+      }
     }
   }
 
@@ -231,11 +240,6 @@
       @include tit-mobile;
     }
   }
-}
-
-/* Main Sectoin > Stack Style */
-
-.sec-main .main-project {
 }
 
 /* Desktop Style */
@@ -252,12 +256,6 @@
       }
 
       .subtit-about {
-        display: inline-block;
-        background-image: linear-gradient(
-          to top,
-          $LIGHT_BLUE 50%,
-          transparent 50%
-        );
         font-size: 2rem;
       }
 
@@ -290,6 +288,9 @@
 
       .intro-me {
         font-size: 1.25rem;
+        span {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -312,7 +313,7 @@
         justify-content: center;
         flex-wrap: wrap;
         font-size: 1rem;
-        margin: 50px 0;
+        margin-top: 50px;
 
         li {
           width: 150px;
@@ -324,30 +325,6 @@
           animation: blink 0.5s alternate infinite;
         }
       }
-
-      // .wrap-mainStack {
-      //   display: inline-block;
-      //   width: 300px;
-      //   padding: 30px;
-      //   margin-top: 50px;
-
-      //   .tit-item {
-      //     top: -20px;
-      //     left: -20px;
-      //     padding: 10px 20px;
-      //     font-size: 1rem;
-      //   }
-
-      //   .cont-item {
-      //     li {
-      //       font-size: 1rem;
-      //     }
-      //   }
-      // }
-
-      // .wrap-mainStack + .wrap-mainStack {
-      //   margin-left: 5vw;
-      // }
     }
 
     .sec-project {
@@ -366,26 +343,28 @@
           width: 40%;
           min-width: 400px;
           padding: 30px;
+          font-size: 1rem;
 
           .tit-item {
             top: -20px;
             left: -20px;
-            padding: 10px 20px;
+            padding: 5px 20px;
             font-size: 1rem;
           }
 
           .period-item {
-            padding-bottom: 5px;
             font-size: 0.75rem;
           }
 
           .skill-use {
-            display: flex;
-            width: 50%;
-
             li {
-              font-size: 1rem;
+              padding: 5px 10px;
             }
+          }
+
+          .purpose-project {
+            margin: 10px 0;
+            font-size: 1.5rem;
           }
 
           svg[class^='link-'] {
@@ -400,6 +379,10 @@
           .link-git {
             right: 25px;
           }
+        }
+
+        .item-project + .item-project {
+          margin-top: 0;
         }
       }
     }
