@@ -117,26 +117,6 @@
   }
 }
 
-/* Slide Animation */
-.sa-start {
-  transition: all 0.2s ease-out;
-}
-
-.sa {
-  opacity: 0;
-  transition: all 0.2s;
-
-  &.show {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.sa-load {
-  transform: rotateY(90deg);
-  /* transform: scale(0.5); */
-}
-
 /* Start Section Style */
 .sec-start {
   width: 100vw;
@@ -160,7 +140,7 @@
   }
 }
 
-@media all and (min-width: 420px) {
+@media all and (min-width: 421px) {
   #app {
     background-image: linear-gradient(
       180deg,

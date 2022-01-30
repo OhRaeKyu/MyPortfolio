@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+// Mobile Style
 /* Main Section Style */
 .sec-main {
   /* Main Sectoin > Module Style */
@@ -50,18 +51,34 @@
         border: 1px solid $LIGHT_BLACK;
       }
 
-      .list-contact a {
-        display: block;
-        box-sizing: border-box;
-        padding: 5px 2vw;
-        font-size: 0.5rem;
-        color: $WHITE;
-        background-color: rgba($LIGHT_BLACK, 0.8);
-        border-radius: 10px;
-      }
+      .list-contact {
+        position: relative;
 
-      .list-contact li + li {
-        margin-top: 5px;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          right: -15px;
+          display: block;
+          width: 16px;
+          height: 16px;
+          background-image: url('../../images/click.png');
+          background-size: cover;
+        }
+
+        a {
+          display: block;
+          box-sizing: border-box;
+          padding: 5px 2vw;
+          font-size: 0.5rem;
+          color: $WHITE;
+          background-color: rgba($LIGHT_BLACK, 0.8);
+          border-radius: 10px;
+        }
+
+        li + li {
+          margin-top: 5px;
+        }
       }
     }
 
@@ -243,7 +260,7 @@
 }
 
 /* Desktop Style */
-@media all and (min-width: 420px) {
+@media all and (min-width: 421px) {
   .sec-main {
     .main-module + .main-module {
       margin-top: 50px;
@@ -271,18 +288,25 @@
           min-width: 150px;
           margin-right: 5vw;
         }
-
-        .list-contact a {
-          font-size: 1rem;
-          border-radius: 20px;
-
-          &:hover {
-            background-color: $BLACK;
+        .list-contact {
+          &::after {
+            bottom: -15px;
+            right: -30px;
+            width: 32px;
+            height: 32px;
           }
-        }
+          a {
+            font-size: 1rem;
+            border-radius: 20px;
 
-        .list-contact li + li {
-          margin-top: 10px;
+            &:hover {
+              background-color: $BLACK;
+            }
+          }
+
+          li + li {
+            margin-top: 10px;
+          }
         }
       }
 
