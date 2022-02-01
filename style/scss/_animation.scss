@@ -45,6 +45,7 @@
   }
 }
 
-.sa-rotate {
-  transform: rotateY(90deg);
+.sa-appear {
+  transition: all 0.5s;
+  transform: translateY(20px);
 }

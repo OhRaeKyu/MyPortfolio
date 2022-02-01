@@ -233,15 +233,14 @@
           position: absolute;
           width: 30px;
           height: 30px;
+          bottom: -11px;
         }
 
         .link-web {
-          bottom: -15px;
           right: 60px;
         }
 
         .link-git {
-          bottom: -15px;
           right: 20px;
         }
       }
@@ -394,6 +393,7 @@
           svg[class^='link-'] {
             width: 50px;
             height: 50px;
+            bottom: -20px;
           }
 
           .link-web {
