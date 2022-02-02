@@ -6,7 +6,7 @@ const saStarts = document.querySelectorAll('.sa-start');
 const saContents = document.querySelectorAll('.sa');
 const moduleTop = document.querySelectorAll('.main-module');
 const chagePoint =
-  moduleTop[2].getBoundingClientRect().top - window.innerHeight / 2;
+  moduleTop[2].getBoundingClientRect().top - window.innerHeight * 0.7;
 
 // 상단 이동 버튼 클릭 이벤트
 moveTopBtn.addEventListener('click', () => {
@@ -57,11 +57,11 @@ const scrollAnimationMain = function () {
   for (let i = 0; i < saContents.length; i++) {
     const contentTop = saContents[i].getBoundingClientRect().top;
     if (!saContents[i].classList.contains('show')) {
-      if (contentTop < window.innerHeight * 0.5) {
+      if (contentTop < window.innerHeight * 0.7) {
         saContents[i].classList.add('show');
       }
     } else {
-      if (contentTop > window.innerHeight * 0.5) {
+      if (contentTop > window.innerHeight * 0.7) {
         saContents[i].classList.remove('show');
       }
     }

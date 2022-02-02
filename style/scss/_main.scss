@@ -147,24 +147,6 @@
         font-size: 3vw;
 
         &:nth-child(2n) {
-          border: 1px solid $LIGHT_PINK;
-          .tit-item {
-            background-color: $LIGHT_PINK;
-          }
-          .purpose-project {
-            color: $LIGHT_PINK;
-          }
-          a {
-            svg {
-              fill: $LIGHT_PINK;
-            }
-            &:hover svg {
-              fill: $LIGHT_BLUE;
-            }
-          }
-        }
-
-        &:nth-child(2n + 1) {
           border: 1px solid $LIGHT_BLUE;
           .tit-item {
             background-color: $LIGHT_BLUE;
@@ -178,6 +160,24 @@
             }
             &:hover svg {
               fill: $LIGHT_PINK;
+            }
+          }
+        }
+
+        &:nth-child(2n + 1) {
+          border: 1px solid $LIGHT_PINK;
+          .tit-item {
+            background-color: $LIGHT_PINK;
+          }
+          .purpose-project {
+            color: $LIGHT_PINK;
+          }
+          a {
+            svg {
+              fill: $LIGHT_PINK;
+            }
+            &:hover svg {
+              fill: $LIGHT_BLUE;
             }
           }
         }
@@ -254,6 +254,24 @@
   .sec-activity {
     .tit-activity {
       @include tit-mobile;
+    }
+
+    .wrap-activity {
+      margin-top: 7vw;
+      text-align: start;
+
+      .item-activity {
+        border-left: 2px solid $LIGHT_PINK;
+        padding-left: 5vw;
+        font-size: 3vw;
+        line-height: 1.5;
+        margin-bottom: 10vw;
+
+        .tit-item {
+          font-size: 6vw;
+          color: $LIGHT_PINK;
+        }
+      }
     }
   }
 }
@@ -408,6 +426,15 @@
         .item-project + .item-project {
           margin-top: 0;
         }
+      }
+    }
+
+    .sec-activity {
+      .tit-activity {
+        @include tit-desktop;
+      }
+      .wrap-activity {
+        margin-top: 50px;
       }
     }
   }
