@@ -5,7 +5,7 @@ const balloonList = document.querySelector('.bg-balloon');
 const saStarts = document.querySelectorAll('.sa-start');
 const saContents = document.querySelectorAll('.sa');
 const moduleTop = document.querySelectorAll('.main-module');
-const chagePoint =
+const changePoint =
   moduleTop[2].getBoundingClientRect().top - window.innerHeight * 0.7;
 
 // 상단 이동 버튼 클릭 이벤트
@@ -41,7 +41,7 @@ const scrollAnimationStart = function () {
     saStarts[1].style.opacity = 0;
   }
   // 백그라운드 변경 애니메이션
-  if (currentScroll > chagePoint) {
+  if (currentScroll > changePoint) {
     app.classList.add('show');
     moveTopBtn.classList.add('dark');
     secStack.classList.add('dark');
@@ -57,11 +57,11 @@ const scrollAnimationMain = function () {
   for (let i = 0; i < saContents.length; i++) {
     const contentTop = saContents[i].getBoundingClientRect().top;
     if (!saContents[i].classList.contains('show')) {
-      if (contentTop < window.innerHeight * 0.7) {
+      if (contentTop < window.innerHeight * 0.75) {
         saContents[i].classList.add('show');
       }
     } else {
-      if (contentTop > window.innerHeight * 0.7) {
+      if (contentTop > window.innerHeight * 0.75) {
         saContents[i].classList.remove('show');
       }
     }
